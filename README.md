@@ -7,7 +7,7 @@ manage image resources in amazon web services for a specific django project (htt
 - delete old images after copy has been made
 - update postgres rds instance (two different tables) with new uuid image file url
 
-### requirements
+### requirements:
 
 - install [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#installation) with `pip install boto3`
 - install [pyscopg2](http://initd.org/psycopg/docs/install.html) with `pip install psycopg2`
