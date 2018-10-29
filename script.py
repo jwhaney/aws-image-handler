@@ -169,7 +169,7 @@ def update_db(bucket, suffix=''):
     print(image_errors)
 
 
-# uncomment each function call below to execute each method one by one or all at the same time
+# uncomment each function call below to execute each task one by one or all at the same time
 # get_s3_images('data.tnris.org', '.jpg')
 
 # delete_old('data.tnris.org', '.jpg')
