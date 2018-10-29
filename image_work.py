@@ -38,8 +38,6 @@ def get_s3_images(bucket, suffix=''):
                 if image in old_names:
                     count += 1
                     new_name = key_path.replace(image, str(uuid.uuid4()) + suffix)
-                    # print(bucket + '/' + key_path)
-                    # print(str(count) + ': ' + key_path + ' --> ' + new_name)
                     print('#{c} copying {k} to new file {n}...'.format(c=count, k=key_path, n=new_name))
                     client.copy_object(Bucket=bucket, CopySource=bucket + '/' + key_path, Key=new_name)
 
@@ -74,7 +72,7 @@ def delete_old(bucket, suffix=''):
 # update the aws postgres rds db with new image names/urls
 def update_db(bucket, suffix=''):
 
-    # Database Connection Info
+    # Database Connection Info - set these locally using your own aws credentials, etc.
     database = os.environ.get('DB_NAME')
     username = os.environ.get('DB_USER')
     password = os.environ.get('DB_PASSWORD')
