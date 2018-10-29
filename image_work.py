@@ -1,4 +1,7 @@
 '''
+author: john haney
+date: october 2018
+
 1) get_s3_images function iterates through all data.tnris.org s3 bucket collection ids (keys),
 copies each image and renames the copy to a new uuid.
 
@@ -10,6 +13,7 @@ copies each image and renames the copy to a new uuid.
     - image_url = new url
    
    this function also replaces the existing collection table thumbnail_image records with the new uuid names.
+
 '''
 import os
 import boto3, uuid
