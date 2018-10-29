@@ -1,4 +1,4 @@
-# aws-image-manage
+# aws-images
 
 manage image resources in amazon web services for a specific django project (https://data.tnris.org)
 
