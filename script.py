@@ -45,7 +45,6 @@ def get_s3_images(bucket, suffix=''):
                     print('#{c} copying {k} to new file {n}...'.format(c=count, k=key_path, n=new_name))
                     client.copy_object(Bucket=bucket, CopySource=bucket + '/' + key_path, Key=new_name)
 
-
         try:
             kwargs['ContinuationToken'] = resp['NextContinuationToken']
         except KeyError:
@@ -98,13 +97,13 @@ def update_db(bucket, suffix=''):
     conn = psycopg2.connect(conn_string)
     cur = conn.cursor()
     
-    # sql statement to get both collection_id and thumbnail_image fields
-    collection_query = "SELECT collection_id, thumbnail_image FROM %s;" % collection_table
-    image_query = "SELECT image_id, image_url, collection_id FROM %s;" % image_table
+    # sql statements for collection and image tables
+    # collection_query = "SELECT collection_id, thumbnail_image FROM %s;" % collection_table
+    # image_query = "SELECT image_id, image_url, collection_id FROM %s;" % image_table
     
     # execute sql statements
     # cur.execute(collection_query)
-    cur.execute(image_query)
+    # cur.execute(image_query)
     
     # get response from both collection and image table queries
     db_response = cur.fetchall()
