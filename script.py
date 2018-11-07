@@ -97,14 +97,6 @@ def update_db(bucket, suffix=''):
     conn = psycopg2.connect(conn_string)
     cur = conn.cursor()
     
-    # sql statements for collection and image tables
-    # collection_query = "SELECT collection_id, thumbnail_image FROM %s;" % collection_table
-    # image_query = "SELECT image_id, image_url, collection_id FROM %s;" % image_table
-    
-    # execute sql statements
-    # cur.execute(collection_query)
-    # cur.execute(image_query)
-    
     # get response from both collection and image table queries
     db_response = cur.fetchall()
 
@@ -168,9 +160,9 @@ def update_db(bucket, suffix=''):
     print(image_errors)
 
 
-# uncomment each function call below to execute each task one by one or all at the same time
-# get_s3_images('data.tnris.org', '.jpg')
+# call each function with necessary arguments to execute each task one by one
+get_s3_images('data.tnris.org', '.jpg')
 
-# delete_old('data.tnris.org', '.jpg')
+delete_old('data.tnris.org', '.jpg')
 
-# update_db('data.tnris.org', '.jpg')
+update_db('data.tnris.org', '.jpg')
