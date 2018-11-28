@@ -1,3 +1,4 @@
+#-----------info--------------------------
 '''
 author: john haney
 date: october 2018
@@ -169,9 +170,6 @@ def aws_image_handler(bucket, suffix=''):
         print('Bad collections...')
         print(image_errors)
 
-# run main function aws_image_handler with necessary arguments 
-# get_s3_images('data.tnris.org', '.jpg')
-# delete_old('data.tnris.org', '.jpg')
-
+# run main function aws_image_handler with necessary arguments
 if __name__ == '__main__':
     aws_image_handler(bucket='data.tnris.org', suffix='.jpg')
