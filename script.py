@@ -78,7 +78,7 @@ def aws_image_handler(bucket, suffix=''):
             except KeyError:
                 break
     
-    print('deteting images with old names')
+    print('deleting images with old names')
     delete_old(bucket, suffix, client, kwargs, old_names)
 
     # update the aws postgres rds db with new image names/urls
