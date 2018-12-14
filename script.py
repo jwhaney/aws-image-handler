@@ -8,7 +8,7 @@ copies each image and renames the copy to a new uuid.
 
 2) delete_old function to delete the old image name jpgs in s3.
 
-3) update_db function adds record to Django image table with:
+3) update_db function adds record to Postgres image table with:
     - image_id = new uuid generated from get_s3_images function
     - collection_id = collection_id
     - image_url = new url
