@@ -3,7 +3,7 @@
 author: john haney
 date: october 2018
 
-1) get_s3_images function iterates through all data.tnris.org s3 bucket collection ids (keys),
+1) get_s3_images function iterates through all s3 bucket collection ids (keys),
 copies each image and renames the copy to a new uuid.
 
 2) delete_old function to delete the old image name jpgs in s3.
@@ -27,7 +27,7 @@ import datetime
 def aws_image_handler(bucket, suffix=''):
     # s3 variables used in all three functions
     # enter your own image names in the old_names list
-    old_names = ['overview.jpg', 'urban.jpg', 'thumbnail.jpg', 'natural.jpg']
+    old_names = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg']
     client = boto3.client('s3')
     kwargs = {'Bucket': bucket}
 
@@ -99,7 +99,7 @@ def aws_image_handler(bucket, suffix=''):
         image_table = 'image'
 
         # s3 stuff to be used later. enter your own base url here.
-        base_url = 'https://s3.amazonaws.com/data.tnris.org/'
+        base_url = 'https://s3.amazonaws.com/bucket-name-here/'
 
         # connect to the database
         conn = psycopg2.connect(conn_string)
@@ -172,4 +172,4 @@ def aws_image_handler(bucket, suffix=''):
 
 # run main function aws_image_handler with necessary arguments
 if __name__ == '__main__':
-    aws_image_handler(bucket='data.tnris.org', suffix='.jpg')
+    aws_image_handler(bucket='bucket-name-here', suffix='.jpg')
